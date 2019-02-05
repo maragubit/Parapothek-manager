@@ -1,0 +1,37 @@
+{%extends 'core/portada.html'%}
+{% load static %}
+{% block content %}
+
+<!--Submenu-->
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+
+
+<h2> Zonas de Aplicación disponibles</h2>
+<br>
+<a class='crearboton' style='color:rgb(14, 14, 13)' href="{% url 'zonacreate' %}"><i><b>Crear Nueva Zona de Aplicación</b></i></a>
+        
+  <br>
+  <div class="zonas">
+    {%for zona in zona_list %}
+        <div class="zona">
+        
+    
+        <h5 ><b>{{zona.nombre}}</b></h5>
+        <img src="{{zona.image.url}}"alt="{{zona.nombre}}"style="width:150px;height:100px;"></img>
+        <br>
+         <a href="{%url 'zonaupdate' zona.id %}"style="text-align:left;" title="Editar" ><i class="fa fa-edit"></i>  </a>
+         |<a href="{%url 'zonadelete' zona.id %}"style="text-align:right;"title="Borrar"> <i class="fa fa-trash-o"></i></a>
+        </div>
+    {%endfor%}
+  </div>
+
+          
+  
+{%endblock%}

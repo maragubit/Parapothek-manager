@@ -1,0 +1,30 @@
+{%extends 'core/portada.html'%}
+{% load static %}
+
+
+
+{% block content %}
+<br>
+<br>
+<h1>Crear una zona de aplicación</h1>
+{%if 'ok' in request.GET %}
+<p style="color:rgb(11, 146, 11) ">Zona creada correctamente.!!!!</p>
+{%endif%}
+<h5>Recomendaciones:</h5>
+<p>La zona de aplicación creada se podrá seleccionar en las opciones de crear una nueva ficha. 
+ A cada artículo solo se le podrá seleccionar una única zona de aplicación
+</p>
+<br>
+<br>
+<!--Para que el formulario acepte imagenes, hay que poner el enctype-->
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+    {{ form.as_p }}
+    
+    <br>
+    <br>
+    
+    <input type="submit" value="Crear zona" />
+</form>
+
+
+{% endblock %}

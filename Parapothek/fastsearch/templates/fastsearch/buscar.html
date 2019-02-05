@@ -1,0 +1,32 @@
+<style>
+        table {padding: 15px;}
+        h5 {text-align:center}
+        
+</style>
+
+{%extends 'core/portada.html'%}
+
+
+{%block content%}
+<br>
+<br>
+
+<h2>Buscador rápido</h2>
+<h5>Elige la zona donde se aplica el producto</h5>
+<br>
+
+
+<div class='zonas'>
+    {%for zona in zonas%}
+
+        <div class='zona'>
+        <th><h5><b>{{zona.nombre}}</b></h5>
+        <h5><a href="{% url 'buscarzona' zona.id %}"><img src="{{zona.image.url}}" alt="{{zona.nombre}}" width="120" height="90"></a></h5></th>
+        </div>
+    
+  
+    {%endfor%}
+</div>
+    
+
+{%endblock%}

@@ -1,0 +1,51 @@
+{%extends 'core/portada.html'%}
+{% load static %}
+
+
+
+{% block content %}
+<style>
+li{
+     text-align:left;
+ }
+ 
+ 
+ select {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    margin-left: 0px;
+}
+.btn {
+    border-radius: 50px;
+    background-color: forestgreen;
+    color: white;
+    border: 0px solid }
+</style>
+<br>
+<br>
+<h1>Elegir indicaciones para: {{ficha.nombre}}</h1>
+
+<h3 style='color:green;'>{{respuesta}}</h3>
+<br>
+<br>
+<div>
+
+
+
+<div id='formularioindicaciones'>
+<form method="post"  style='display: inline-block;'>{% csrf_token %}
+{{form}}
+
+<input type="submit" value="Crear indicación">
+</form>
+<!---{{form.errors}}
+<p><label for="{{ form.id_for_label }}">Indicaciones: </label></p>
+<div id='indicacionescheck' style="height: 15em; width: auto; overflow: auto; text-align: left;">{%for indicacion in form.indicaciones %}
+<div>{{indicacion}}</div>
+{%endfor%}</div>
+</div>
+
+</div>
+-->
+{% endblock %}

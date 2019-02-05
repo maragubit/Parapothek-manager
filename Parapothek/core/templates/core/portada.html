@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+{%load static%}
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Parapothek Manager</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,600">        
+        <link rel="stylesheet" href="{% static 'core/assets/bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'core/assets/font-awesome/css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'core/assets/css/animate.css' %}">
+		<link rel="stylesheet" href="{% static 'core/assets/css/form-elements.css' %}">
+        <link rel="stylesheet" href="{% static 'core/assets/css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'core/assets/css/media-queries.css' %}">
+
+
+
+        
+        
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="{% static 'core/assets/ico/favicon.png'%}">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'core/assets/ico/apple-touch-icon-144-precomposed.png' %}">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'core/assets/ico/apple-touch-icon-114-precomposed.png' %}">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'core/assets/ico/apple-touch-icon-72-precomposed.png' %}">
+        <link rel="apple-touch-icon-precomposed" href="{% static 'core/assets/ico/apple-touch-icon-57-precomposed.png' %}">
+
+    <!-- Estilos INSPINIA...................................               -->
+
+    <link href="{% static 'core/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'core/font-awesome/css/font-awesome.css' %}" rel="stylesheet">
+
+    <!-- Toastr style -->
+    <link href="{% static 'core/css/plugins/toastr/toastr.min.css' %}" rel="stylesheet">
+
+    <!-- Gritter -->
+    <link href="{% static 'core/js/plugins/gritter/jquery.gritter.css' %}" rel="stylesheet">
+
+    <link href="{% static 'core/css/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'core/css/style.css' %}" rel="stylesheet">
+    </head>
+
+    <body>
+    
+        <!-- Loader -->
+    	<div class="loader">
+    		<div class="loader-img"></div>
+    	</div>
+
+		<!-- Top menu -->
+		<nav class="navbar navbar-inverse navbar-fixed-top navbar-no-bg" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="top-navbar-1">
+					<ul class="nav navbar-nav">
+                        <li><a  href="{% url 'portada'%}">Inicio</a></li>
+                        <li><a  href="{% url 'fichas'%}">Fichas</a></li>
+                        <li><a  href="{% url 'zonas'%}">Zonas de Aplicación</a></li>
+                        <li><a  href="{% url 'indicaciones'%}">Indicaciones</a></li>
+                        <li><a  href="{% url 'fichaspuntuacion'%}">Mejor valorados</a></li>
+						
+                        
+                    </ul>
+                    
+					
+				</div>
+               
+			</div>
+        </nav>
+        
+         
+        
+
+        {%block content%}
+        <!-- Top content -->
+        <div class="top-content">
+        	
+            <div class="inner-bg">
+                <div class="container">
+                	
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                        	<div class="logo wow fadeInDown">
+                        		<a href="#"></a>
+                        	</div>
+                            <h1 class="wow fadeInLeftBig">Paraphotek Manager</h1>
+                            <div class="description wow fadeInLeftBig">
+                            	<p> Versión 18.0
+	                            
+                            	</p>
+                            </div>
+                            <div class='buscarapid'>
+                                <div class="top-big-link wow fadeInUp">
+                            	    <a class="btn btn-link-1" style='border-radius: 30px' href="{%url 'buscar'%}">Buscador rápido</a>
+                            	</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            
+        </div>
+        {%endblock%}
+        
+       
+
+
+        <!-- Javascript -->
+        <script src="{% static 'core/assets/js/jquery-1.11.1.min.js' %}"></script>
+        <script src="{% static 'core/assets/bootstrap/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'core/assets/js/jquery.backstretch.min.js' %}"></script>
+        <script src="{% static 'core/assets/js/wow.min.js' %}"></script>
+        <script src="{% static 'core/assets/js/retina-1.1.0.min.js' %}"></script>
+        <script src="{% static 'core/assets/js/waypoints.min.js' %}"></script>
+        <script src="{% static 'core/assets/js/scripts.js' %}"></script>
+        
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
+    
+        <!-- Scrips de INSPINIA................................................  -->
+
+        <!-- Mainly scripts -->
+    <script src="{% static 'core/js/jquery-3.1.1.min.js' %}"></script>
+    <script src="{% static 'core/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'core/js/plugins/metisMenu/jquery.metisMenu.js' %}"></script>
+    <script src="{% static 'core/js/plugins/slimscroll/jquery.slimscroll.min.js' %}"></script>
+
+    <!-- Flot -->
+    <script src="{% static 'core/js/plugins/flot/jquery.flot.js' %}"></script>
+    <script src="{% static 'core/js/plugins/flot/jquery.flot.tooltip.min.js' %}"></script>
+    <script src="{% static 'core/js/plugins/flot/jquery.flot.spline.js' %}"></script>
+    <script src="{% static 'core/js/plugins/flot/jquery.flot.resize.js' %}"></script>
+    <script src="{% static 'core/js/plugins/flot/jquery.flot.pie.js' %}"></script>
+
+    <!-- Peity -->
+    <script src="{% static 'core/js/plugins/peity/jquery.peity.min.js' %}"></script>
+    <script src="{% static 'core/js/demo/peity-demo.js' %}"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="{% static 'core/js/inspinia.js' %}"></script>
+    <script src="{% static 'core/js/plugins/pace/pace.min.js' %}"></script>
+
+    <!-- jQuery UI -->
+    <script src="{% static 'core/js/plugins/jquery-ui/jquery-ui.min.js' %}"></script>
+
+    <!-- GITTER -->
+    <script src="{% static 'core/js/plugins/gritter/jquery.gritter.min.js' %}"></script>
+
+    <!-- Sparkline -->
+    <script src="{% static 'core/js/plugins/sparkline/jquery.sparkline.min.js' %}"></script>
+
+    <!-- Sparkline demo data  -->
+    <script src="{% static 'core/js/demo/sparkline-demo.js' %}"></script>
+
+    <!-- ChartJS-->
+    <script src="{% static 'core/js/plugins/chartJs/Chart.min.js' %}"></script>
+
+    <!-- Toastr -->
+    <script src="{% static 'core/js/plugins/toastr/toastr.min.js' %}"></script>
+
+    </body>
+
+</html>

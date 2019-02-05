@@ -1,0 +1,42 @@
+{%extends 'core/portada.html'%}
+{% load static %}
+
+
+
+{% block content %}
+<br>
+<br>
+<h2>Crear una indicacion</h2>
+{%if 'ok' in request.GET %}
+<p style="color:rgb(11, 146, 11) ">Indicación creada correctamente.!!!!</p>
+{%endif%}
+
+<br>
+<br>
+<div id='formulario'>
+<form method="post" style='display: inline-block;'>{% csrf_token %}
+<div id 'nombreindicacion'>
+{{ form.nombre.errors }}
+<p><label for="{{ form.nombre.id_for_label }}">Nombre: </label></p>
+{{form.nombre}}
+</div>
+<br>
+<div id='zonaindicacion'>
+{{form.zona.errors}}
+<p><label for="{{ form.zona.id_for_label }}">Zona: </label></p>
+<div id='zonascheck' style="height: 15em; width: auto; overflow: auto; text-align: left;">{%for indicacion in form.zona %}
+<div>{{indicacion}}</div>
+{%endfor%}</div>
+</div>
+
+</div>
+
+
+
+
+    
+<br>
+<input type="submit" value="Crear indicación" />
+</form>
+</div>
+{% endblock %}

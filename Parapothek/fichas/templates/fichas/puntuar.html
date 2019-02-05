@@ -1,0 +1,24 @@
+{%extends 'core/portada.html'%}
+{% load static %}
+{% block content %}
+
+<br>
+<br>
+<h2>Sumar nota a <a href="{%url 'fichaupdate' fichaid %}">{{nombre}}</a></h2>
+<h3 style= 'color:green;'>{{respuesta1}}</h3>
+<h3 style= 'color:red;'>{{respuesta2}}</h3>
+<form method="POST" style= 'display: inline-grid;'>{% csrf_token %}
+ 
+    {{form}}
+   
+   
+
+    <br>
+    <input type="submit" value="sumar nota" />
+    <br>
+</form>
+
+
+
+
+{%endblock%}

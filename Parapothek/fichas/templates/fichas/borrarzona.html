@@ -1,0 +1,26 @@
+{%extends 'core/portada.html'%}
+{% load static %}
+{% block content %}
+
+<br>
+<br>
+<br>
+<br>
+<h3>ATENCIÓN</h3>
+<p><ins>Si borra esta zona de aplicación, se borraran automáticamente los artículos que se apliquen en {{object}}.!!!!</ins></p>
+
+<main role="main">
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col-md-9 mx-auto">
+        <div>
+            <form action="" method="post">{% csrf_token %}
+                <p>¿Estás seguro de que quieres borrar "{{ object }}"?</p>
+                <input type="submit" value="Sí, borrar zona de aplicación" />
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

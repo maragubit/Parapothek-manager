@@ -1,0 +1,33 @@
+{%extends 'core/portada.html'%}
+
+{%block content%}
+<br>
+<br>
+<h2>{{nombre}}<h2>
+<br>
+<h3>Selecciona el número de indicaciones para las que está indicado el producto a buscar:</h3>
+
+<h5><b>(Si no selecciona ninguna casilla de indicación,mostrará todas las fichas de la zona seleccionada)</b></h4>
+  <br>     
+<form action="" name='formu' method="POST" > {% csrf_token %}
+        {%for indicacion in indicaciones%}
+        <div class='indicaciones' style= "text-align:left;">
+        <label><input type="checkbox" name="{{indicacion.nombre}}" value="on"> {{indicacion.nombre}}</label><br>
+        </div>
+
+ 
+        {%endfor%}
+
+<br>
+<br>
+<div>
+<input type="submit" value="buscar fichas">
+</form>
+</div>
+{%endblock%}
+
+   
+   
+    
+</body>
+</html>

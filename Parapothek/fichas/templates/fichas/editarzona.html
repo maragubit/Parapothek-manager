@@ -1,0 +1,27 @@
+{%extends 'core/portada.html'%}
+{% load static %}
+
+
+
+{% block content %}
+<br>
+<br>
+<h3>Editar zona de aplicación</h3>
+
+<br>
+{%if 'ok' in request.GET %}
+<p style="color:rgb(11, 146, 11) ">Zona editada correctamente.!!!!</p>
+{%endif%}
+<br>
+<img src="{{object.image.url}}"alt="´{{zona.nombre}}"style="width:150px;height:100px;"></img>
+<br>
+<form method="post"  enctype="multipart/form-data">{% csrf_token %}
+    <br>
+    {{ form.as_p }}
+    
+    
+    <br>
+    <input type="submit" value="Editar zona" />
+</form>
+
+{% endblock %}

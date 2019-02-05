@@ -1,0 +1,30 @@
+{%extends 'core/portada.html'%}
+{% load static %}
+{% block content %}
+
+<!--Submenu-->
+
+<br>
+<br>
+
+
+<h2>Indicaciones</h2>
+<br>
+<a class='crearboton' style='color:rgb(14, 14, 13)' href="{% url 'indicacioncreate' %}"><i><b>Crear Nueva Indicación</b></i></a>
+<br>
+<br>
+<div class="indicaciones">
+    {%for indicacion in indicacion_list %}
+     <div class="indicacion"   
+        
+    
+        <h2><b>{{indicacion.nombre}}</b></h2>
+        <div class='editarborrar'>
+        <a href="{%url 'indicacionupdate' indicacion.id %}"title="Editar" ><i class="fa fa-edit"> </i></a><a href="{%url 'indicaciondelete' indicacion.id %}" title="Borrar"> <i class="fa fa-trash-o"></i></a></h5>
+        </div> 
+     </div>
+    {%endfor%}
+
+</div>
+<br>
+{%endblock%}

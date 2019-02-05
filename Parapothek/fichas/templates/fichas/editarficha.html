@@ -1,0 +1,90 @@
+{%extends 'core/portada.html'%}
+{% load static %}
+
+
+
+{% block content %}
+<style>
+ table{
+  margin:auto;
+  width: 50%;
+  border: 1px solid black;
+  padding: 10px;
+  border-collapse: initial
+ }
+ td{ 
+  padding: 5px;
+  text-align:left;
+ }
+ li{
+     text-align:left;
+ }
+ 
+ 
+ select {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    margin-left: 0px;
+}
+.btn {
+    border-radius: 50px;
+    background-color: forestgreen;
+    color: white;
+    border: 0px solid 
+}
+</style>
+<br>
+<br>
+<h3>Editar Ficha</h3>
+{%if not 'ok' in request.GET %}
+<h4>Para añadir indicaciones, por favor seleccione primero una zona y pulse el botón 'añadir zona'.</h4>
+{%endif%}
+
+{%if 'ok' in request.GET %}
+<p style='color:rgb(11, 146, 11);'>Zona añadida correctamente</p>
+<p><p><a href="{%url 'indicacioneschoose' object.pk %}" class= "btn">Añadir indicaciones</a></p>
+{%endif%}
+
+<div id='block'>
+
+ 
+
+    <table>
+        <tr>
+
+            <td>
+                <div id='bloqueficha'>
+                <p style ='text-align: -webkit-center;'><b><id style="font-size: 16px; color:green;">{{object.nombre}}</id><b></p>
+                <p>Referencia: <id style="font-size: 16px; color:green;">{{object.cn}}</id></p>
+                <p>PVP: <id style="font-size: 16px; color:green;">{{object.pvp}}</id></p>
+                <p>PVF: <id style="font-size: 16px; color:green;">{{object.pvf}}</id></p>
+                <p>Stock: <id style="font-size: 16px; color:green;">{{object.stock}}</id></p>
+                </div>
+                <p><div id='puntuacion'>
+                    <p><img src= {% static imagen %} alt="carita" width=90 heigth=90></p>
+                    <p>Puntuación: <id style="font-size: 16px; color:green;">{{object.media}}</id>  votos: ({{ votos }})</p>
+                    <p><a href="{%url 'puntuar' object.id %}" class= "btn">Puntuar</a></p>
+                </div></p>
+            </td>
+        </tr>
+        
+    </table>
+
+
+
+
+
+
+
+<div class="form-group">
+<form  action = '' method="POST">{% csrf_token %}    
+<div>
+{{ form.as_p }}
+</div>
+
+<input type="submit" value="añadir zona" />
+</form>
+<div>
+
+{% endblock %}

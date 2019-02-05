@@ -1,0 +1,39 @@
+{%extends 'core/portada.html'%}
+{% load static %}
+
+
+
+{% block content %}
+<br>
+<br>
+<h3>Editar Indicacion</h3>
+{%if 'ok' in request.GET %}
+<p style="color:rgb(11, 146, 11) ">Indicación editada correctamente.!!!!</p>
+{%endif%}
+<h5>Recomendaciones:</h5>
+<p>La indicación editada se podrá seleccionar en las opciones de crear una nueva ficha. 
+    A cada artículo  se le podrán añadir tantas indicaciones como se quieran
+</p>
+<br>
+<br>
+<div id='formulario'>
+<form method="post" style='display: inline-block;'>{% csrf_token %}
+<div id 'nombreindicacion'>
+{{ form.nombre.errors }}
+<p><label for="{{ form.nombre.id_for_label }}">Nombre: </label></p>
+{{form.nombre}}
+</div>
+<br>
+<div id='zonaindicacion'>
+{{form.zona.errors}}
+<p><label for="{{ form.zona.id_for_label }}">Zona: </label></p>
+<div id='zonascheck' style="height: 15em; width: auto; overflow: auto; text-align: left;">{%for indicacion in form.zona %}
+<div>{{indicacion}}</div>
+{%endfor%}</div>
+</div>
+
+</div>
+<input type="submit" value="Crear indicación" />
+</form>
+
+{% endblock %}

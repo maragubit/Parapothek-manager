@@ -1,0 +1,51 @@
+{%extends 'core/portada.html'%}
+
+{%block content%}
+<style>
+table{
+  margin:auto;
+  padding:15px;
+  width:auto;
+}
+td{
+  padding:5px;
+  text-align:left;
+}
+tr{
+  padding:10px
+}
+</style>
+<br>
+<br>
+<h3>Resultado búsqueda:</h3>
+<br>
+<int>Fichas Disponibles</int></h2>
+
+    <table>
+
+    {%for ficha in fichasfinal %}
+    <tr>    
+        
+    
+    <td>CN: {{ficha.cn}}</td>   
+    <td>Nombre: <a href="{%url 'fichaupdate' ficha.id%}"><b>{{ficha.nombre}} </b></a></td> 
+    <td>Zona: {{ficha.zonap}}</td>
+    <td>Indicacion: {%for indicacion in ficha.indicaciones.all%} {{indicacion}}; {%endfor%}</td> 
+    <td>Puntuación: <b><id style="font-size: 13px; color:green;">{{ficha.media}}</id></b></td>   
+    <td>PVP: {{ficha.pvp}}€</td>    
+    <td>Stock: {{ficha.stock}} </td>      
+    <td><a href="{%url 'fichaupdate' ficha.id%}"title="Editar" ><i class="fa fa-edit"> </i></a></td>
+        
+        
+     </tr>   
+    {%endfor%}
+</table>
+<br>
+{%endblock%}
+
+
+   
+   
+    
+</body>
+</html>
