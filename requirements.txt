@@ -1,3 +1,4 @@
 Pillow==5.0.0
 django==2.0.2
 django-ckeditor==5.4.0
+django-stdimage==4.0.1
